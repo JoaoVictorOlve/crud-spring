@@ -10,16 +10,12 @@ import { Observable, tap, take, first } from 'rxjs';
 })
 export class CoursesComponent implements OnInit {
 
-  courses: Observable<Course[]>;
+  courses$: Observable<Course[]>;
   displayedColumns = ['name', 'category'];
 
 
   constructor(private coursesService: CoursesService){
-    this.courses = this.coursesService.list()
-    .pipe(
-      first(),
-      tap(courses => console.log(courses))
-    )
+    this.courses$ = this.coursesService.list()
   }
 
   ngOnInit():void{
