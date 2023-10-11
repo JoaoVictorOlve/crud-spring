@@ -1,2 +1,2 @@
-# angular-and-spring
+# crud-spring
 Learning Spring Boot
